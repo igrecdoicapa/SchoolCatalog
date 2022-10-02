@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<DialogPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.AddPointsDialog">
+
+    <content>
+        <GridPane vgap="10" hgap = "10">
+            <Label text="Date: " GridPane.rowIndex = "1" GridPane.ColumnIndex = "0"/>
+            <DatePicker fx:id = "pointsDate" GridPane.rowIndex = "1" GridPane.ColumnIndex = "1"/>
+            <Label text="Points: " GridPane.rowIndex = "2" GridPane.ColumnIndex = "0"/>
+            <ComboBox fx:id = "points" GridPane.rowIndex = "2" GridPane.ColumnIndex = "1">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="10"/>
+                        <String fx:value="9"/>
+                        <String fx:value="8"/>
+                        <String fx:value="7"/>
+                        <String fx:value="6"/>
+                        <String fx:value="5"/>
+                        <String fx:value="4"/>
+                        <String fx:value="3"/>
+                        <String fx:value="2"/>
+                        <String fx:value="1"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <fx:define>
+                <ToggleGroup  fx:id="specialPoints"/>
+            </fx:define>
+            <Label text="Autumn examination: "  GridPane.rowIndex = "3" GridPane.ColumnIndex = "0"/>
+            <RadioButton fx:id = "isAutumnExamination" toggleGroup="$specialPoints"
+                         GridPane.rowIndex = "3" GridPane.ColumnIndex = "1"/>
+            <Label fx:id = "lblThesis" text="Thesis: " GridPane.rowIndex = "4" GridPane.ColumnIndex = "0"/>
+            <RadioButton fx:id = "isThesis" toggleGroup="$specialPoints"
+                         GridPane.rowIndex = "4" GridPane.ColumnIndex = "1"/>
+        </GridPane>
+    </content>
+</DialogPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.MotivateAbsenceDialog">
+
+    <content>
+        <BorderPane>
+            <top>
+                <GridPane>
+                    <HBox>
+                        <Button fx:id = "motivateSelected" text="Motivate selected absences"
+                                onAction="#motivateSelectedAbsences"/>
+                        <Button fx:id = "unmotivateSelected" text="Unmotivate selected absences"
+                                onAction="#unmotivateSelectedAbsences"/>
+                    </HBox>
+                </GridPane>
+            </top>
+            <center>
+                <TableView fx:id="allStudentAbsencesTableView">
+                    <columns>
+                        <TableColumn fx:id = "subjectColumn" text = "Subject"/>
+                        <TableColumn fx:id = "dateColumn" text = "Date"/>
+                        <TableColumn fx:id = "motivatedColumn" text = "Motivated" />
+                    </columns>
+                </TableView>
+            </center>
+
+        </BorderPane>
+    </content>
+</DialogPane>

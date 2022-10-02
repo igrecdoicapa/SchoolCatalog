@@ -1,0 +1,66 @@
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.CheckBox?>
+<BorderPane fx:id="mainBorderPane" fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <GridPane vgap="10" hgap="10">
+            <HBox>
+                <Label text="Class"/>
+                <ComboBox fx:id="classFilter"/>
+                <Label text="Subject"/>
+                <ComboBox fx:id="subjectFilter" minWidth="100"/>
+                <Button fx:id="addPoints" text="Add points" onAction="#showAddPointsDialog"/>
+                <Button fx:id="addAbsence" text="Add absence" onAction="#showAddAbsenceDialog"/>
+                <Button fx:id="motivateAbsence" text="Motivate absences" onAction="#showMotivateAbsencesDialog"/>
+                <ComboBox fx:id="yearShow"/>
+            </HBox>
+        </GridPane>
+    </top>
+    <left>
+        <ListView fx:id="studentListView"/>
+    </left>
+    <right>
+        <GridPane>
+            <VBox GridPane.rowIndex="0" GridPane.ColumnIndex="0">
+                <TableView fx:id="pointsView">
+                    <columns>
+                        <TableColumn text="Points" fx:id="PointsColumn"/>
+                        <TableColumn text="Date" fx:id="PointsDateColumn"/>
+                        <TableColumn text="Special Points" fx:id="SpecialPointsColumn"/>
+                    </columns>
+                </TableView>
+                <Label text="Average semester I: "/>
+                <TextField fx:id="averagePointsS1" editable="False"/>
+                <Label text="Average semester II: "/>
+                <TextField fx:id="averagePointsS2" editable="False"/>
+                <Label text="Requires thesis: "/>
+            </VBox>
+            <VBox GridPane.rowIndex="0" GridPane.ColumnIndex="1">
+                <TableView fx:id="absenceView">
+                    <columns>
+                        <TableColumn text="Absence" fx:id="AbsenceColumn"/>
+                        <TableColumn text="Motivated" fx:id="MotivatedColumn" minWidth="100"/>
+                    </columns>
+                </TableView>
+                <Label text="Total: "/>
+                <TextField fx:id="totalAbsences" editable="False"/>
+                <Label text="Total unmotivated: "/>
+                <TextField fx:id="totalUnmotivatedAbsences" editable="False"/>
+                <Button fx:id="motivateSingleAbsence" text="Motivate absence" onAction="#motivateSelectedAbsence"/>
+            </VBox>
+        </GridPane>
+    </right>
+</BorderPane>

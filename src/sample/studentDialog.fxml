@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<DialogPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.studentDialog">
+
+    <content>
+        <BorderPane>
+            <left>
+                <VBox>
+                    <Label text = "First name" GridPane.RowIndex = "0" GridPane.ColumnIndex = "0"/>
+                    <TextField fx:id = "studentFirstName" GridPane.RowIndex = "0" GridPane.ColumnIndex = "1"/>
+                    <Label text = "Last name" GridPane.RowIndex = "1" GridPane.ColumnIndex = "0"/>
+                    <TextField fx:id = "studentLastName" GridPane.RowIndex = "1" GridPane.ColumnIndex = "1"/>
+                    <Label text = "Email" GridPane.RowIndex = "2" GridPane.ColumnIndex = "0"/>
+                    <TextField fx:id = "studentEmail" GridPane.RowIndex = "2" GridPane.ColumnIndex = "1"/>
+                    <Label text = "Phone" GridPane.RowIndex = "3" GridPane.ColumnIndex = "0"/>
+                    <TextField fx:id = "studentPhone" GridPane.RowIndex = "3" GridPane.ColumnIndex = "1"/>
+                    <Label text = "Contacts:" GridPane.RowIndex = "4" GridPane.ColumnIndex = "0"/>
+                    <TableView fx:id="contactsView" GridPane.RowIndex = "5" editable="true">
+                        <columns>
+                            <TableColumn text="First Name" fx:id="contactFirstName"/>
+                            <TableColumn text="Last Name" fx:id="contactLastName"/>
+                            <TableColumn text="Email" fx:id="contactEmail"/>
+                            <TableColumn text="Phone" fx:id="contactPhone"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </left>
+            <center>
+                <VBox>
+                    <HBox>
+                        <Button fx:id = "makeThesis" text="Make thesis" onAction="#makeSelectedThesis"/>
+                        <Button fx:id = "removeThesis" text="Remove thesis" onAction="#removeSelectedThesis"/>
+                    </HBox>
+                    <Label text="Average per subject" GridPane.RowIndex = "0" GridPane.ColumnIndex = "2"/>
+                    <TableView fx:id="averageView" GridPane.RowIndex = "1" GridPane.ColumnIndex = "2">
+                        <columns>
+                            <TableColumn text="Subject" fx:id="subject"/>
+                            <TableColumn text="1st semester" fx:id="sem1"/>
+                            <TableColumn text="2nd semester" fx:id="sem2"/>
+                            <TableColumn text="Autumn examination" fx:id="autumnExamination"/>
+                            <TableColumn text="Final" fx:id="finalAverage"/>
+                            <TableColumn text="Requires thesis" fx:id="requiresThesis"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </center>
+        </BorderPane>
+    </content>
+</DialogPane>
